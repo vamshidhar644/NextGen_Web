@@ -14,41 +14,17 @@ import { MenDropDown } from './NavDropdown';
 const Navigation = () => {
   const { logout } = useLogout();
   const { user } = useAuthContext();
-
+  console.log(user);
   defineElement(lottie.loadAnimation);
 
   const handleClick = () => {
     logout();
   };
 
-  const [showDropdownWomen, setShowDropdownWomen] = useState(false);
-  const [showDropdownMen, setShowDropdownMen] = useState(true);
-  const divRef = useRef(null);
-
-  const handleMouseEnterWomen = () => {
-    setShowDropdownWomen(true);
-  };
-  const handleMouseEnterMen = () => {
-    setShowDropdownMen(true);
-  };
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (divRef.current && !divRef.current.contains(event.target)) {
-        setShowDropdownWomen(false);
-        setShowDropdownMen(false);
-      }
-    }
-    window.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      window.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [divRef]);
-
   return (
     <div className="navigation-container">
       <div className="navbar-nav">
-        <div className="navbar-nav-section2">
+        <div className="navbar-nav-section1">
           <Link to="/" style={{ textDecoration: 'none' }}>
             <h1>ρούχα</h1>
           </Link>
@@ -71,23 +47,11 @@ const Navigation = () => {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <NavLink
-                  to="/women"
-                  onMouseEnter={handleMouseEnterWomen}
-                  ref={divRef}
-                >
-                  Women
-                </NavLink>
-                {showDropdownWomen && <WomenDropdown />}
+                <NavLink to="/women">Women</NavLink>
+                {/* {showDropdownWomen && <WomenDropdown />} */}
               </li>
               <li className="nav-item">
-                <NavLink
-                  to="/men"
-                  onMouseEnter={handleMouseEnterMen}
-                  ref={divRef}
-                >
-                  Men
-                </NavLink>
+                <NavLink to="/men">Men</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to="/kids">Kids</NavLink>
@@ -100,13 +64,7 @@ const Navigation = () => {
               </li>
               <li>
                 <div className="input-wrapper">
-                  <Link className="login-section-icons" to="/favorites">
-                    <lord-icon
-                      trigger="hover"
-                      src="https://cdn.lordicon.com/iwaotjbp.json"
-                      style={{ width: '40px', height: '40px' }}
-                    />
-                  </Link>
+                  <Link className="login-section-icons" to="/favorites"></Link>
                   {user && (
                     <div className="login-user">
                       <p className="user-firstname">Hello! {user.firstName}</p>
@@ -135,6 +93,11 @@ const Navigation = () => {
                       </Link>
                     </div>
                   )}
+                  <lord-icon
+                    trigger="hover"
+                    src="https://cdn.lordicon.com/iwaotjbp.json"
+                    style={{ width: '40px', height: '40px' }}
+                  />
                   <Link className="login-section-icons" to="/your-bag">
                     <lord-icon
                       src="https://cdn.lordicon.com/rmzhcgbh.json"

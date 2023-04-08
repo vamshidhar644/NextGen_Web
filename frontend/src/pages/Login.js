@@ -20,16 +20,19 @@
 import { useState } from 'react';
 import { useLogin } from '../hooks/useLogin';
 import '../Styles/Loginpage.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { login, error } = useLogin();
 
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     await login(email, password);
+    navigate('/');
   };
   return (
     <div className="login-Container" onSubmit={handleSubmit}>
@@ -49,9 +52,12 @@ const Login = () => {
           value={password}
           className="form--input"
         />
+        {error && <div className="error">{error}</div>}
 
         <button className="form--submit">Login</button>
-        {error && <div className="error">{error}</div>}
+        <p>
+          Don't have account? <Link to="/signup">Signup</Link>
+        </p>
       </form>
     </div>
   );

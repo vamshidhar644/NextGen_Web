@@ -1,35 +1,45 @@
 import { useState } from 'react';
 import { useSignup } from '../hooks/useSignup';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { signup, error, isLoading } = useSignup();
 
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     await signup(email, password);
+    navigate('/');
   };
   return (
-    <form className="signup" onSubmit={handleSubmit}>
-      <h3>Sign up</h3>
-      <label>Email: </label>
-      <input
-        type="email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-      />
-      <label>Password: </label>
-      <input
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-      />
+    <div className="login-Container" onSubmit={handleSubmit}>
+      <form className="login-form">
+        <span className="signup">Signup</span>
+        <input
+          type="email"
+          placeholder="Email address"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          className="form--input"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          className="form--input"
+        />
+        {error && <div className="error">{error}</div>}
 
-      <button disabled={isLoading}>Sign up</button>
-      {error && <div className="error">{error}</div>}
-    </form>
+        <button className="form--submit">Signup</button>
+        <p>
+          Already have account? <Link to="/login">Login</Link>
+        </p>
+      </form>
+    </div>
   );
 };
 
