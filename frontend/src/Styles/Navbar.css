@@ -1,0 +1,121 @@
+
+
+.collapse{
+    width: 100%;
+}
+
+.navbar-collapse ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-nav{
+    width: 100%;
+    display: flex;
+    align-items: left;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navbar-nav-section1, .navbar-nav-section3{
+    width: 45%;
+}
+
+.navbar-nav-section3{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-nav h1{
+    text-align: right;
+    color: var(--bs-font-color);
+    font-weight: 600;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.nav-item{
+    width: fit-content;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.login-section-icons{
+    cursor: pointer;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-user, .logout-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: inherit;
+    color: var(--secondary-color);
+}
+
+.login-section-icons:hover{
+    color: var(--bs-font-color);
+}
+
+.user-firstname{
+    margin: 0px;
+    font-weight: 500;
+    font-size: 20px;
+}
+  
+ul{
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+    line-height: 30px;
+}
+
+ul li a {
+    display: block;
+    border: 2px solid transparent;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    border-bottom: 2px solid var(--bs-font-color);
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+ul li ul.dropdown {
+    font-size: 14px;
+    background: #fff;
+    display: none;
+    border-radius: 10px;
+    position: absolute;
+    width: 150px;
+    z-index: 999;
+    padding: 15px;
+}
+
+ul li:hover ul.dropdown {
+    display: block; /* Display the dropdown */
+}
+
+ul li ul.dropdown li {
+    display: block;
+    text-align: center;
+}
