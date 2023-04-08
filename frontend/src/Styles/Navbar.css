@@ -4,6 +4,13 @@
     width: 100%;
 }
 
+.navigation-container{
+    
+    background: #C33764;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
 .navbar-collapse ul{
     display: flex;
     flex-direction: column;
@@ -12,31 +19,33 @@
 .navbar-nav{
     width: 100%;
     display: flex;
-    align-items: left;
     flex-direction: row;
     justify-content: space-around;
+
 }
+
 
 .navbar-nav-section1, .navbar-nav-section3{
     width: 45%;
 }
 
-.navbar-nav-section3{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 .navbar-nav h1{
-    text-align: right;
-    color: var(--bs-font-color);
-    font-weight: 600;
+    color: #fff;
+    font-weight: 300;
     padding: 10px;
     font-family: 'Raleway', sans-serif;
 }
 
 .nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: fit-content;
+}
+
+.nav-item a{
+    color: #fff;
+    font-weight: 340;
 }
 
 .input-wrapper {
@@ -44,10 +53,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 10px;
-    position: relative;
     font-size: 25px;
-    font-weight: bolder;
 }
 
 .login-section-icons{
@@ -95,9 +101,9 @@ ul li a {
 }
 
 ul li a:hover {
-    border-bottom: 2px solid var(--bs-font-color);
+    font-weight: 450px;
     cursor: pointer;
-    color: var(--secondary-color);
+    color: black;
 }
 
 ul li ul.dropdown {
