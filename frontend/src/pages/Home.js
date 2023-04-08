@@ -40,6 +40,10 @@ const Home = () => {
             }
           })}
       </Carousel>
+
+      <div className='Categories-Container'>
+        
+      </div>
     </div>
   );
 };
