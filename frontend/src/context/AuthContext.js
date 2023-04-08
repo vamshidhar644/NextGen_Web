@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect, useContext } from 'react';
+import { createContext, useReducer, useEffect } from 'react';
 
 export const AuthContext = createContext();
 export const authReducer = (state, action) => {
@@ -35,16 +35,3 @@ export const AuthContextProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
-export const useAuthContext = () => {
-  const context = useContext(AuthContext);
-
-  if (!context) {
-    throw Error(
-      'useAuthContext must be used inside an ItemsContextProvider'
-    );
-  }
-
-  return context;
-};
-

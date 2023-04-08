@@ -3,57 +3,57 @@ import '../Styles/Search.css'
 const Search = () => {
   return (
     <div className="suggestion-parent">
-      <form class="form">
-        <label for="search">
+      <form className="form">
+        <label htmlFor="search">
           <input
             required=""
-            autocomplete="off"
+            autoComplete="off"
             placeholder="search"
             id="input-box"
             name="item_list"
             type="text"
             list="Input-box"
           />
-          <div class="icon">
+          <div className="icon">
             <svg
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="swap-on"
+              className="swap-on"
             >
               <path
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                stroke-linejoin="round"
-                stroke-linecap="round"
+                strokeLinejoin="round"
+                strokeLinecap="round"
               ></path>
             </svg>
             <svg
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="swap-off"
+              className="swap-off"
             >
               <path
                 d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                stroke-linejoin="round"
-                stroke-linecap="round"
+                strokeLinejoin="round"
+                strokeLinecap="round"
               ></path>
             </svg>
           </div>
-          <button type="reset" class="close-btn">
+          <button type="reset" className="close-btn">
             <svg
               viewBox="0 0 20 20"
-              class="h-5 w-5"
+              className="h-5 w-5"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                clip-rule="evenodd"
+                clipRule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               ></path>
             </svg>
           </button>

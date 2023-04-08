@@ -1,14 +1,14 @@
 import './App.css';
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useAuthContext } from './context_hooks/AuthContext';
+import { useAuthContext } from './hooks/useAuthContext';
 import Navbar from './Components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
 
 function App() {
   const user = useAuthContext();
-
+  console.log("dfdf")
   return (
     <div className="App">
       <BrowserRouter>

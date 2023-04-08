@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../Styles/Navbar.css';
 import { Link, NavLink } from 'react-router-dom';
 
-import { useLogout } from '../context_hooks/useLogout';
-import { useAuthContext } from '../context_hooks/AuthContext';
+import { useLogout } from '../hooks/useLogout';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 import lottie from 'lottie-web';
 import { defineElement } from 'lord-icon-element';
