@@ -14,7 +14,7 @@ import { MenDropDown } from './NavDropdown';
 const Navigation = () => {
   const { logout } = useLogout();
   const { user } = useAuthContext();
-  console.log(user);
+  // console.log(user);
   defineElement(lottie.loadAnimation);
 
   const handleClick = () => {
