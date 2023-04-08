@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useAuthContext } from '../hooks/useAuthContext';
 import { useBannerContext } from '../hooks/useBannerContext';
+import Categories from './Categories';
 
 const Home = () => {
   const { user } = useAuthContext();
@@ -41,8 +42,8 @@ const Home = () => {
           })}
       </Carousel>
 
-      <div className='Categories-Container'>
-        
+      <div className="Categories-Container">
+        <Categories/>
       </div>
     </div>
   );
