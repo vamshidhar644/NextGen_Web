@@ -8,7 +8,7 @@ import Login from './pages/Login';
 
 function App() {
   const user = useAuthContext();
-  console.log("dfdf")
+
   return (
     <div className="App">
       <BrowserRouter>
