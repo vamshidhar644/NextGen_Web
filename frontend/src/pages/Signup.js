@@ -3,10 +3,11 @@ import { useSignup } from '../hooks/useSignup';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
-  const [fName, setfName]=useState('');
-  const [lName, setlName]=useState('');
+  const [firstName, setfName]=useState('');
+  const [lastName, setlName]=useState('');
   const [email, setEmail] = useState('');
-  const [pNumber, setPnumber] = useState('');
+  const [phone, setPnumber] = useState('');
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('');
   const [Cpassword, setCpassword] = useState('');
   const { signup, error, isLoading } = useSignup();
@@ -15,7 +16,9 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await signup(email, password);
+    
+
+    await signup(firstName, lastName, email, username, phone, password);
     navigate('/');
   };
   return (
@@ -26,7 +29,7 @@ const Signup = () => {
           type="text"
           placeholder="First Name *"
           onChange={(e) => setfName(e.target.value)}
-          value={fName}
+          value={firstName}
           className="form--input"
           required
         />
@@ -34,7 +37,7 @@ const Signup = () => {
           type="text"
           placeholder="Last Name *"
           onChange={(e) => setlName(e.target.value)}
-          value={lName}
+          value={lastName}
           className="form--input"
           required
         />
@@ -50,7 +53,15 @@ const Signup = () => {
           type="text"
           placeholder="Phone Number *"
           onChange={(e) => setPnumber(e.target.value)}
-          value={pNumber}
+          value={phone}
+          className="form--input"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Username*"
+          onChange={(e) => setUsername(e.target.value)}
+          value={username}
           className="form--input"
           required
         />

@@ -1,0 +1,97 @@
+.Home-Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Carousel-Container{
+    height: 80vh;
+    width: 100%;
+    cursor: pointer;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item{
+    height: 80vh;
+    background-color: aqua;
+    background-size: contain;
+    overflow: hidden;
+}
+
+
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+}
+
+.Categories-Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+
+    background: #e96443;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.Brands-Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+
+}
+
+
+.CollectionsCard{
+    width: 240px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: aqua;
+}
+
+.category-container, .brands-container{
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    
+}
+
+.services{
+    width: 100%;
+}
+
+.CardImage{
+    width: 240px;
+    height: 300px;
+}
+
+.CardImage img{
+    width: 100%;
+    height: 100%;
+}
+
+.Cat-CardImage{
+    width: 100px;
+    height: 40px;
+}
+
+.Cat-CardImage img{
+    width: 100%;
+    height: 100%;
+}
+
+.brands-container{
+    width: 100%;
+}

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const fs = require('fs');
 const Banner = require('../models/BannerModel');
-const BannerModel = require('../models/BannerModel');
 
 // GET all Banners
 const getBanners = async (req, res) => {

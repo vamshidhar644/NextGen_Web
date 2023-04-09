@@ -48,7 +48,7 @@ const signupUser = async (req, res) => {
 
     res.status(200).json({
       email,
-      password: user.password,
+      password,
       firstName,
       lastName,
       username,

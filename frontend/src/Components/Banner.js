@@ -1,27 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import '../Styles/Caurosel.css';
-import { useAuthContext } from '../hooks/useAuthContext';
-import { useBannerContext } from '../hooks/useBannerContext';
-const Banner = ({banner}) => {
-  
-  // console.log(banner);
 
+import sanityClient from '../client';
+
+import { useAuthContext } from '../hooks/useAuthContext';
+// import { useBannerContext } from '../hooks/useBannerContext';
+const Banner = () => {
+  const { user } = useAuthContext();
+  const [Banner, setBanner] = useState('');
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "banner"] {title, path, image {asset -> {_id, url}, alt}}`
+      )
+      .then((HomeData) => setBanner(HomeData))
+      .catch(console.error);
+  });
   return (
-    <div>
-      {/* <Carousel className="Carousel-Container">
-        {banner &&
-          banners.map((banner) => {
-            <Carousel.Item key={banner.id}>
-              <img
-                src={imgSrc}
-                alt="not uploaded"
-                className="image-container"
-              />
-            </Carousel.Item>;
-          })}
-      </Carousel> */}
-    </div>
+    <Carousel className="Carousel-Container">
+      {Banner &&
+        Banner.map((homedata) => (
+          <Carousel.Item className="Carousel-Item" key={homedata.path}>
+            <img src={homedata.image.asset.url} alt="" />
+          </Carousel.Item>
+        ))}
+    </Carousel>
   );
 };
 

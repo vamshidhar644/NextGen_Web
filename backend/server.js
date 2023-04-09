@@ -5,6 +5,7 @@ const { default: mongoose } = require('mongoose');
 
 const userRoute = require('./routes/user');
 const bannerRoute = require('./routes/banner');
+const categoryRoute = require('./routes/categories');
 
 // Express app
 const app = express();
@@ -19,7 +20,8 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api/user', userRoute);
-app.use('/api/banner', bannerRoute);
+app.use('/api/banner', bannerRoute); 
+app.use('/api/category', categoryRoute);
 
 mongoose.set('strictQuery', false);
 
